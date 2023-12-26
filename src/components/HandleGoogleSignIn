@@ -1,0 +1,21 @@
+  import GoogleButton from "react-google-button";
+  
+  const HandleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate("/home");
+    } catch (error) {
+      console.log(error.message);
+    }
+    return (
+        <GoogleButton
+            className="g-btn"
+            type="dark"
+            onClick={handleGoogleSignIn}
+          />
+    )
+  };
+
+
+  export default HandleGoogleSignIn;
